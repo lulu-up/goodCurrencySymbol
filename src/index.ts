@@ -37,14 +37,15 @@ type FormatObjItem = {
     abbreviationCalculationType?: "ceil" | "floor" | "round";
 };
 
+const validAbbreviationsTypeEN = {
+    3: "K",
+    6: "M",
+    9: "B",
+    12: "T",
+};
+
 export default class CurrencyFormat {
     formatObj = new Map<string, FormatObjItem>();
-    validAbbreviationsTypeEN = {
-        3: "K",
-        6: "M",
-        9: "B",
-        12: "T",
-    };
     addFormatType(typeName: string, options: FormatTypeOptions): void {
         if (typeName) {
             const {
@@ -79,7 +80,7 @@ export default class CurrencyFormat {
                 targetCurrency,
                 abbreviationCalculationType,
                 abbreviationMaxFractionDigits,
-                validAbbreviations: validAbbreviations || this.validAbbreviationsTypeEN,
+                validAbbreviations: validAbbreviations || validAbbreviationsTypeEN,
             });
         } else {
             throw new Error("typeName undefined");
