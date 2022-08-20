@@ -1,7 +1,7 @@
 {
     "name": "good-currency-symbol",
-    "version": "0.1.0",
-    "description": "",
+    "version": "0.1.1",
+    "description": "currency symbol",
     "main": "dist/index.umn.js",
     "module": "dist/index.esm.js",
     "types": "types/index.d.ts",

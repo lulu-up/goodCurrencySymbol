@@ -1,9 +1,8 @@
 ## goodCurrencySymbol (数字 -> 货币字符串)
 
+* 支持货币缩写、 支持可控货币精度、支持自定义货币符号、自动配置货币符号位置、自动配置货币千分号、兼容负数、 支持ts
 
 <hr>
-
-- 支持货币缩写、 支持可控货币精度、支持自定义货币符号、自动配置货币符号位置、自动配置货币千分号、兼容负数、 支持ts
 
 ### github : https://github.com/lulu-up/goodCurrencySymbol
 
@@ -34,7 +33,7 @@ npm install good-currency-symbol
 
 ```
 
-可返回详细信息:
+可返回详细信息: formatDetail
 
 ```js
 currencyFormat.formatDetail('人民币', 12.34);
@@ -63,21 +62,21 @@ const validAbbreviationsTypeEN = {
 };
 ```
 
-例如配置成中文缩写:
+例如配置成中文缩写: formatAbbreviation
 ```js
-  const currencyFormat = new CurrencyFormat();
-   currencyFormat.addFormatType("越南_中文", {
-        locale: 'vi-VN',
-        currency: "VND",
-        validAbbreviations: {
+const currencyFormat = new CurrencyFormat();
+  currencyFormat.addFormatType("越南_中文", {
+    locale: 'vi-VN',
+    currency: "VND",
+    validAbbreviations: {
             "3": '千',
             "4": '万',
             "8": "亿",
             "13": "兆"
-        },
-    });
+      },
+  });
 
-  currencyFormat.formatAbbreviation('越南_中文', 12345.67) // 
+  currencyFormat.formatAbbreviation('越南_中文', 12345.67) // 1万₫
 ```
 
 
